@@ -24,42 +24,15 @@ public class LionParamTest {
         return new Object[][]{
                 {"Самка", false},
                 {"Самец", true},
-                {"asdfa", true}
         };
     }
 
     @Test
     public void testDoesHaveManeReturnFalse() throws Exception {
-
-        try {
-            assertEquals(new Lion(sex, feline).doesHaveMane(), result);
-        } catch (Exception e) {
-            assertEquals("Используйте допустимые значения пола животного - самец или самка", e.getMessage());
-        }
+        assertEquals(new Lion(sex, feline).doesHaveMane(), result);
     }
 
 }
 
-
-//    @Test
-//    public void testDoesHaveManeReturnFalse() throws Exception {
-//
-//        switch (sex) {
-//            case  ("Самка"):
-//                assertFalse(new Lion(sex,feline).doesHaveMane());
-//                break;
-//            case ("Самец"):
-//                assertTrue(new Lion(sex, feline).doesHaveMane());
-//                break;
-//            default:
-//                try {
-//                    new Lion(sex, feline);
-//                    Assert.fail("Expected exception was not thrown.");
-//                } catch (Exception e) {
-//                    Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", e.getMessage());
-//                }
-//                break;
-//        }
-//    }
 
 

@@ -1,11 +1,12 @@
 package com.example;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
 import java.util.List;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class AnimalParamTest {
@@ -20,21 +21,15 @@ public class AnimalParamTest {
 
     @Parameterized.Parameters
     public static Object[][] getSumData() {
-        return new Object[][] {
+        return new Object[][]{
                 {"Травоядное", List.of("Трава", "Различные растения")},
                 {"Хищник", List.of("Животные", "Птицы", "Рыба")},
-                {"человечище", List.of("Неизвестный вид животного, используйте значение Травоядное или Хищник")}
         };
     }
 
     @Test
-    public void testDoesHaveManeReturnFalse() {
-
-        try {
-            assertEquals(expected ,new Animal().getFood(animalKind));
-        } catch (Exception e) {
-            e.getMessage().contains(expected.toString());
-        }
+    public void testDoesHaveManeReturnFalse() throws Exception {
+        assertEquals(expected, new Animal().getFood(animalKind));
     }
 
 

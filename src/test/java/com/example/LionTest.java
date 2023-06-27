@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import java.util.List;
 
 
@@ -31,4 +32,14 @@ public class LionTest extends TestCase {
         Mockito.when(feline.getFood("Хищник")).thenReturn(expected);
         assertEquals(expected, lion.getFood());
     }
+
+    @Test
+    public void testException() {
+        try {
+            new Lion("sex", feline).doesHaveMane();
+        } catch (Exception e) {
+            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", e.getMessage());
+        }
+    }
+
 }

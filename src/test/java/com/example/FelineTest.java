@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -20,7 +19,7 @@ public class FelineTest extends TestCase {
     @Test
     public void testEatMeat() throws Exception {
         Feline feline = new Feline();
-        List <String> ex = List.of("Животные", "Птицы", "Рыба");
+        List<String> ex = List.of("Животные", "Птицы", "Рыба");
         Assert.assertEquals(ex, feline.eatMeat());
     }
 
@@ -28,7 +27,7 @@ public class FelineTest extends TestCase {
     public void testGetFamily() {
 
         Feline feline = new Feline();
-        Assert.assertEquals("Кошачьи",feline.getFamily());
+        Assert.assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
