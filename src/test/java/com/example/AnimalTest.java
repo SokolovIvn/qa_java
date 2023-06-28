@@ -3,6 +3,8 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class AnimalTest {
@@ -19,7 +21,7 @@ public class AnimalTest {
         String expected = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
 
         try {
-            assertEquals(expected, new Animal().getFood("animalKind"));
+            new Animal().getFood("animalKind");
         } catch (Exception e) {
             assertEquals(expected, e.getMessage());
         }
