@@ -1,7 +1,6 @@
 package com.example;
 
 import junit.framework.TestCase;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -9,6 +8,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
+
+import static org.junit.Assert.assertThrows;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -35,11 +36,11 @@ public class LionTest extends TestCase {
 
     @Test
     public void testException() {
-        try {
+
+        Throwable thrown = assertThrows(Exception.class, () -> {
             new Lion("sex", feline).doesHaveMane();
-        } catch (Exception e) {
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", e.getMessage());
-        }
+        });
+        assertEquals("Используйте допустимые значения пола животного - самец или самка", thrown.getMessage());
     }
 
 }
